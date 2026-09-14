@@ -310,11 +310,11 @@
     "intents": [
       {
         "intent": "GetRecentResearch",
-        "pattern": "^\\s*[Cc]are sunt cele mai recente cercetări\\?\\s*$"
+        "pattern": "^\\s*[Cc]are sunt cele mai recente cercet(?:ă|a)ri\\?\\s*$"
       },
       {
         "intent": "ResearchLookup",
-        "pattern": "^\\s*(?:[Gg]ăsește-mi|[Aa]du-mi|[Aa]rată-mi) (?:publicații|cercetări) despre(?: subiectul)? (?<topic>.*)\\s*$"
+        "pattern": "^\\s*(?:[Gg]ăsește-mi|[Aa]du-mi|[Aa]rată-mi) (?:publicații|cercetări) despre(?: subiectul)? (?<topic>.+?)\\s*$"
       },
       {
         "intent": "AskForMore",
