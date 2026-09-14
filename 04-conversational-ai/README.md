@@ -127,7 +127,7 @@ First, we will start with a prepopulate Azure Cognitive Search knowledge base en
 
    ![GetRecentResearch trigger is selected. Trigger phrase is highlighted.](media/getrecentresearch-trigger-phrase.png)
 
-9. Switch back to the emulator and write, `Care sunt cele mai recente cercettări?`. You will see that our bot can't understand the message anymore because that typo is outside the accepted regex forms. So far, our bot has used **Regular Expression Recognizer** as its Language Understanding engine. The current setup for the **GetRecentResearch** trigger still relies on a narrow regex pattern to detect user intent, so this specific typo results in a failure.
+9. Switch back to the emulator and write, `Care sunt cele mai recete cercetări?`. You will see that our bot can't understand the message anymore because that typo is outside the accepted regex forms. So far, our bot has used **Regular Expression Recognizer** as its Language Understanding engine. The current setup for the **GetRecentResearch** trigger still relies on a narrow regex pattern to detect user intent, so this specific typo results in a failure.
 
    ![A dialog shows the user asking latest research with a typo in the text. Bot responds with a sorry message.](media/bot-regex-response-latestresearch-fail.png)
 

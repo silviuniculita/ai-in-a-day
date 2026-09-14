@@ -314,7 +314,7 @@
       },
       {
         "intent": "ResearchLookup",
-        "pattern": "^\\s*(?:[Gg]ăsește-mi|[Aa]du-mi|[Aa]rată-mi) (?:publicații|cercetări) despre(?: subiectul)? (?<topic>.+?)\\s*$"
+        "pattern": "^\\s*(?:[Gg](?:ă|a)se(?:ș|s)te-mi|[Aa]du-mi|[Aa]rat(?:ă|a)-mi) (?:publica(?:ț|t)ii|cercet(?:ă|a)ri) despre(?: subiectul)? (?<topic>.+?)\\s*$"
       },
       {
         "intent": "AskForMore",
@@ -322,7 +322,7 @@
       },
       {
         "intent": "OrganizationBasedSearch",
-        "pattern": "^\\s*(?:[Gg]ăsește-mi publicații de la|[Aa]rată-mi cercetări de la|[Cc]e cercetări a publicat) (?<organization>.+?)(?:\\?)?\\s*$"
+        "pattern": "^\\s*(?:[Gg](?:ă|a)se(?:ș|s)te-mi publica(?:ț|t)ii de la|[Aa]rat(?:ă|a)-mi cercet(?:ă|a)ri de la|[Cc]e cercet(?:ă|a)ri a publicat) (?<organization>.+?)(?:\\?)?\\s*$"
       }
     ]
   }
