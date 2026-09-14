@@ -322,11 +322,7 @@
       },
       {
         "intent": "OrganizationBasedSearch",
-        "pattern": "^\\s*(?:[Gg]ăsește-mi publicații de la|[Aa]rată-mi cercetări de la) (?<organization>.+?)\\s*$"
-      },
-      {
-        "intent": "OrganizationBasedSearch",
-        "pattern": "^\\s*[Cc]e cercetări a publicat (?<organization>.+?)\\?\\s*$"
+        "pattern": "^\\s*(?:[Gg]ăsește-mi publicații de la|[Aa]rată-mi cercetări de la|[Cc]e cercetări a publicat) (?<organization>.+?)(?:\\?)?\\s*$"
       }
     ]
   }
