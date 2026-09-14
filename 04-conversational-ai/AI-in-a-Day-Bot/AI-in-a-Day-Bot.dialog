@@ -318,15 +318,11 @@
       },
       {
         "intent": "AskForMore",
-        "pattern": "^\\s*[Mm]ai multe\\s*$"
+        "pattern": "^\\s*[Mm]ai multe\\??\\s*$"
       },
       {
         "intent": "OrganizationBasedSearch",
         "pattern": "^\\s*(?:[Gg]ăsește-mi publicații de la|[Aa]rată-mi cercetări de la) (?<organization>.+?)\\s*$"
-      },
-      {
-        "intent": "AskForMore",
-        "pattern": "^\\s*[Mm]ai multe\\?\\s*$"
       },
       {
         "intent": "OrganizationBasedSearch",
