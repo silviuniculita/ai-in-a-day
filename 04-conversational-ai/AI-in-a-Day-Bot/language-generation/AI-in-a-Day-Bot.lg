@@ -1,0 +1,26 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+- Salut, pot găsi pentru tine cercetări recente despre COVID folosind un set de date extras din COVID-19 Open Research Dataset, disponibil la https://azure.microsoft.com/en-us/services/open-datasets/catalog/covid-19-open-research/
+# SendActivity_003038()
+- Îmi pare rău. Nu am înțeles. Încearcă să întrebi „Care sunt cele mai recente cercetări?”.
+
+
+# SendActivity_yXPxMD()
+- Caut publicații recente...
+# SendActivity_S0eIRE()
+- Iată un document intitulat "${dialog.searchResult.content.value[0].title}". Îl poți accesa la ${dialog.searchResult.content.value[0].url}
+# SendActivity_Da2iYr()
+- Iată cele mai recente ${count(dialog.searchResult.content.value)} cercetări publicate.
+# SendActivity_U6iifd()
+- "${dialog.searchResult.content.value[dialog.foreach.index].title}" disponibil la ${dialog.searchResult.content.value[dialog.foreach.index].url}
+# SendActivity_hjExtS()
+- Nu sunt sigur ce cauți. Întreabă-mă despre cele mai recente cercetări.
+# SendActivity_UpOK5X()
+- "${dialog.searchResult.content.value[0].title}" disponibil la ${dialog.searchResult.content.value[0].url}
+# SendActivity_zEOIoJ()
+- Caut mai multe cercetări despre ${user.LastTopicSearch}.
+# SendActivity_DPAmuu()
+- "${dialog.searchResult.content.value[dialog.foreach.index].title}" disponibil la ${dialog.searchResult.content.value[dialog.foreach.index].url}
+# SendActivity_MCuhpP()
+- Iată cele mai recente ${count(dialog.searchResult.content.value)} cercetări publicate de ${@organization}.

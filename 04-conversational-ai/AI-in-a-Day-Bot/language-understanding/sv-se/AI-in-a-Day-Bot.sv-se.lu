@@ -1,0 +1,14 @@
+
+# GetRecentResearch
+- Vilken är den senaste forskningen?
+
+# ResearchLookup
+- Hitta publikationer om {topic=SARS}
+- Visa forskning om {topic=SARS}
+
+# AskForMore
+- Mer
+
+# OrganizationBasedSearch
+- Hitta publikationer från {organization=WHO}
+- Visa forskning från {organization=WHO}
