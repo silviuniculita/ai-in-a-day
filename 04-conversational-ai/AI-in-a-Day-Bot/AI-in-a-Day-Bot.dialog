@@ -310,7 +310,7 @@
     "intents": [
       {
         "intent": "GetRecentResearch",
-        "pattern": "Care sunt cele mai recente cercetări?"
+        "pattern": "^\\s*[Cc]are sunt cele mai recente cercetări\\?\\s*$"
       },
       {
         "intent": "ResearchLookup",
@@ -318,11 +318,19 @@
       },
       {
         "intent": "AskForMore",
-        "pattern": "^\\s*[Mm]ai multe\\??\\s*$"
+        "pattern": "^\\s*[Mm]ai multe\\s*$"
       },
       {
         "intent": "OrganizationBasedSearch",
-        "pattern": "^\\s*(?:[Gg]ăsește-mi publicații de la|[Aa]rată-mi cercetări de la|[Cc]e cercetări a publicat) (?<organization>.*?)(?:\\?)?\\s*$"
+        "pattern": "^\\s*(?:[Gg]ăsește-mi publicații de la|[Aa]rată-mi cercetări de la) (?<organization>.+?)\\s*$"
+      },
+      {
+        "intent": "AskForMore",
+        "pattern": "^\\s*[Mm]ai multe\\?\\s*$"
+      },
+      {
+        "intent": "OrganizationBasedSearch",
+        "pattern": "^\\s*[Cc]e cercetări a publicat (?<organization>.+?)\\?\\s*$"
       }
     ]
   }
