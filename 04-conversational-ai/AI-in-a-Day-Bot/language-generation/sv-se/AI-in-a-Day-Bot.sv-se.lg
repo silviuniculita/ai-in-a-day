@@ -1,0 +1,26 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+- Hej, jag kan hitta den senaste forskningen om COVID åt dig med hjälp av ett dataset från COVID-19 Open Research Dataset, som finns här: https://azure.microsoft.com/en-us/services/open-datasets/catalog/covid-19-open-research/
+# SendActivity_003038()
+- Förlåt, jag förstod inte. Försök att fråga: ”Vilken är den senaste forskningen?”
+
+
+# SendActivity_yXPxMD()
+- Letar efter nya publikationer...
+# SendActivity_S0eIRE()
+- Här är ett dokument med titeln "${dialog.searchResult.content.value[0].title}". Du hittar det på ${dialog.searchResult.content.value[0].url}
+# SendActivity_Da2iYr()
+- Här är de senaste ${count(dialog.searchResult.content.value)} publicerade forskningsresultaten.
+# SendActivity_U6iifd()
+- "${dialog.searchResult.content.value[dialog.foreach.index].title}" finns på ${dialog.searchResult.content.value[dialog.foreach.index].url}
+# SendActivity_hjExtS()
+- Jag är inte säker på vad du letar efter. Fråga mig om den senaste forskningen.
+# SendActivity_UpOK5X()
+- "${dialog.searchResult.content.value[0].title}" finns på ${dialog.searchResult.content.value[0].url}
+# SendActivity_zEOIoJ()
+- Letar efter mer forskning om ${user.LastTopicSearch}.
+# SendActivity_DPAmuu()
+- "${dialog.searchResult.content.value[dialog.foreach.index].title}" finns på ${dialog.searchResult.content.value[dialog.foreach.index].url}
+# SendActivity_MCuhpP()
+- Här är de senaste ${count(dialog.searchResult.content.value)} forskningspublikationerna från ${@organization}.

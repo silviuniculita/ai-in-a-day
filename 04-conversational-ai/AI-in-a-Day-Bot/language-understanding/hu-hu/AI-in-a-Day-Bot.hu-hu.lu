@@ -1,0 +1,14 @@
+
+# GetRecentResearch
+- Melyek a legfrissebb kutatások?
+
+# ResearchLookup
+- Keress nekem publikációkat erről {topic=SARS}
+- Mutass nekem kutatásokat erről {topic=SARS}
+
+# AskForMore
+- Még többet
+
+# OrganizationBasedSearch
+- Keress nekem publikációkat ettől a szervezettől {organization=WHO}
+- Mutass nekem kutatásokat ettől a szervezettől {organization=WHO}

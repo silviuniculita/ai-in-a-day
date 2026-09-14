@@ -1,0 +1,26 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+- Szia, meg tudom keresni neked a legfrissebb COVID-kutatásokat a COVID-19 Open Research Dataset mintájából, amely itt érhető el: https://azure.microsoft.com/en-us/services/open-datasets/catalog/covid-19-open-research/
+# SendActivity_003038()
+- Sajnálom, ezt nem értettem. Próbáld meg ezt kérdezni: „Melyek a legfrissebb kutatások?”
+
+
+# SendActivity_yXPxMD()
+- Friss publikációkat keresek...
+# SendActivity_S0eIRE()
+- Itt van egy dokumentum, amelynek címe: "${dialog.searchResult.content.value[0].title}". Itt érheted el: ${dialog.searchResult.content.value[0].url}
+# SendActivity_Da2iYr()
+- Íme a legfrissebb ${count(dialog.searchResult.content.value)} publikált kutatás.
+# SendActivity_U6iifd()
+- "${dialog.searchResult.content.value[dialog.foreach.index].title}" itt érhető el: ${dialog.searchResult.content.value[dialog.foreach.index].url}
+# SendActivity_hjExtS()
+- Nem vagyok biztos benne, mit keresel. Kérdezz rá a legfrissebb kutatásokra.
+# SendActivity_UpOK5X()
+- "${dialog.searchResult.content.value[0].title}" itt érhető el: ${dialog.searchResult.content.value[0].url}
+# SendActivity_zEOIoJ()
+- További kutatásokat keresek erről: ${user.LastTopicSearch}.
+# SendActivity_DPAmuu()
+- "${dialog.searchResult.content.value[dialog.foreach.index].title}" itt érhető el: ${dialog.searchResult.content.value[dialog.foreach.index].url}
+# SendActivity_MCuhpP()
+- Íme a legfrissebb ${count(dialog.searchResult.content.value)}, ${@organization} által publikált kutatás.

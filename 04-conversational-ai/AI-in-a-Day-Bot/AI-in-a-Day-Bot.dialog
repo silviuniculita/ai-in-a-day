@@ -310,19 +310,19 @@
     "intents": [
       {
         "intent": "GetRecentResearch",
-        "pattern": "^\\s*[Cc]are sunt cele mai recente cercet(?:ă|a)ri\\??\\s*$"
+        "pattern": "^\\s*(?:[Cc]are sunt cele mai recente cercet(?:ă|a)ri|[Mm]elyek a legfrissebb kutat(?:á|a)sok|[Vv]ilken är den senaste forskningen)\\??\\s*$"
       },
       {
         "intent": "ResearchLookup",
-        "pattern": "^\\s*(?:[Gg](?:ă|a)se(?:ș|s)te(?:-|\\s+)mi|[Aa]du(?:-|\\s+)mi|[Aa]rat(?:ă|a)(?:-|\\s+)mi)\\s+(?:publica(?:ț|t)ii|cercet(?:ă|a)ri)\\s+despre(?:\\s+subiectul)?\\s+(?<topic>.+?)\\s*$"
+        "pattern": "^\\s*(?:(?:[Gg](?:ă|a)se(?:ș|s)te(?:-|\\s+)mi|[Aa]du(?:-|\\s+)mi|[Aa]rat(?:ă|a)(?:-|\\s+)mi)\\s+(?:publica(?:ț|t)ii|cercet(?:ă|a)ri)\\s+despre(?:\\s+subiectul)?|(?:[Kk]eress(?:\\s+nekem)?|[Mm]utass(?:\\s+nekem)?|[Aa]dj(?:\\s+nekem)?)\\s+(?:publikációkat|kutatásokat)\\s+(?:erről|ebben a témában)|(?:[Hh]itta|[Vv]isa|[Gg]e\\s+mig)\\s+(?:publikationer|forskning)\\s+om)\\s+(?<topic>.+?)\\s*$"
       },
       {
         "intent": "AskForMore",
-        "pattern": "^\\s*[Mm]ai multe\\??\\s*$"
+        "pattern": "^\\s*(?:[Mm]ai multe|[Mm](?:é|e)g t(?:ö|o)bbet|[Mm]er)\\??\\s*$"
       },
       {
         "intent": "OrganizationBasedSearch",
-        "pattern": "^\\s*(?:(?:[Gg](?:ă|a)se(?:ș|s)te(?:-|\\s+)mi|[Aa]rat(?:ă|a)(?:-|\\s+)mi)\\s+(?:publica(?:ț|t)ii|cercet(?:ă|a)ri)\\s+de\\s+la|[Cc]e\\s+cercet(?:ă|a)ri\\s+a\\s+publicat)\\s+(?<organization>.+?)(?:\\?)?\\s*$"
+        "pattern": "^\\s*(?:(?:(?:[Gg](?:ă|a)se(?:ș|s)te(?:-|\\s+)mi|[Aa]rat(?:ă|a)(?:-|\\s+)mi)\\s+(?:publica(?:ț|t)ii|cercet(?:ă|a)ri)\\s+de\\s+la)|(?:[Cc]e\\s+cercet(?:ă|a)ri\\s+a\\s+publicat)|(?:(?:[Kk]eress(?:\\s+nekem)?|[Mm]utass(?:\\s+nekem)?)\\s+(?:publikációkat|kutatásokat)\\s+(?:ettől\\s+a\\s+szervezettől|a\\s+következő\\s+szervezettől))|(?:(?:[Hh]itta|[Vv]isa)\\s+(?:publikationer|forskning)\\s+från))\\s+(?<organization>.+?)(?:\\?)?\\s*$"
       }
     ]
   }
