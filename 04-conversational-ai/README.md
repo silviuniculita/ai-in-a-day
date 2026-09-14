@@ -210,7 +210,7 @@ Our Bot is now using a **Regular expression recognizer** as its Language Underst
    - Ce cercetări a publicat {organization=Institute of Cancer Research}?
    ```
 
-9. Select **AskForMore (1)** trigger. Type the following two separate lines into the **Trigger phrases** box **(2)**: `-Mai multe` and `-Mai multe?`. Feel free to improve the utterances for this Intent by adding more examples.  
+9. Select **AskForMore (1)** trigger. Type the regex pattern `^\\s*[Mm]ai multe\\??\\s*$` into the **Trigger phrases** box **(2)** so the bot accepts both `Mai multe` and `Mai multe?`. Feel free to improve the utterances for this Intent by adding more examples.  
 
     ![AskForMore Trigger is open. Trigger phrase is set to More.](media/askformore-luis-trigger.png)  
 
