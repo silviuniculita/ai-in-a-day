@@ -107,19 +107,19 @@ First, we will start with a prepopulate Azure Cognitive Search knowledge base en
 
    ![Bot Framework Emulator is shown. Bot URL is set to http://localhost:3980/api/messages. The Connect button is highlighted.](media/bot-framework-emulator-connect.png)
 
-4. Write `Care sunt cele mai recente cercetări?` and observe **(1)** how the bot will respond. You can see the API communication between the emulator and the bot in the list of logs **(2)**.
+4. Write `What is the latest research?` and observe **(1)** how the bot will respond. You can see the API communication between the emulator and the bot in the list of logs **(2)**.
 
    ![A dialog between the bot and the user showing the latest COVID research is highlighted. Logs about API requests are shown.](media/bot-response-regex-getrecentresearch.png)
 
-5. Write `Găsește-mi publicații despre SARS` and observe how the bot will respond.
+5. Write `Find me publications about SARS` and observe how the bot will respond.
 
    ![A dialog where the user asks for more COVID publications related to SARS and five research results is presented.](media/bot-response-regex-researchlookup.png)
 
-6. Write `Mai multe` and observe how the bot will respond.
+6. Write `More` and observe how the bot will respond.
 
    ![A dialog where the user asks for more COVID publications related to SARS and one more research result is presented.](media/bot-response-regex-askformore.png)
 
-7. Write `Găsește-mi publicații de la WHO` and observe how the bot will respond.
+7. Write `Find me publications from WHO` and observe how the bot will respond.
 
    ![A dialog where the user asks for more COVID publications published by WHO and five  research result is presented.](media/bot-response-regex-organizationbasedresearch.png)
 
@@ -127,11 +127,11 @@ First, we will start with a prepopulate Azure Cognitive Search knowledge base en
 
    ![GetRecentResearch trigger is selected. Trigger phrase is highlighted.](media/getrecentresearch-trigger-phrase.png)
 
-9. Switch back to the emulator and write, `Care snt cele mai recente cercetări?`. You will see that our bot can't understand the message anymore because that typo is outside the accepted regex forms. So far, our bot has used **Regular Expression Recognizer** as its Language Understanding engine. The current setup for the **GetRecentResearch** trigger still relies on a narrow regex pattern to detect user intent, so this specific typo results in a failure.
+9. Switch back to the emulator and write, `What is the latest resarch?`. You will see that our bot can't understand the message anymore. So far, our bot has used **Regular Expression Recognizer** as its Language Understanding engine. The current setup for the **GetRecentResearch** trigger matches only an exact text to detect user intent. A simple typographical error results in a failure.
 
    ![A dialog shows the user asking latest research with a typo in the text. Bot responds with a sorry message.](media/bot-regex-response-latestresearch-fail.png)
 
-10. Switch back to the **Bot Framework Composer** and select **ResearchLookup (1)**. Remember, previously, we asked the bot `Găsește-mi publicații despre SARS` to get the latest COVID research related to SARS. You can find the regular expression used to detect the user's intent in the **Trigger Phrases (2)** section. If the user writes anything else, maybe a typographical error, the bot will fail to understand its user's intent.
+10. Switch back to the **Bot Framework Composer** and select **ResearchLookup (1)**. Remember, previously, we asked the bot `Find me publications about SARS` to get the latest COVID research related to SARS. You can find the regular expression used to detect the user's intent in the **Trigger Phrases (2)** section. If the user writes anything else, maybe a typographical error, the bot will fail to understand its user's intent.
 
     ![ResearchLookup trigger is selected. Trigger phrase regular expression is shown to detect a single pattern.](media/research-lookup-regex-trigger.png)
 
@@ -164,30 +164,42 @@ Our Bot is now using a **Regular expression recognizer** as its Language Underst
 6. Copy and paste the below language understanding code with a list of utterances with a single machine-learning entity type definition called `topic` into the **Trigger phrases** box **(3)**. All topic entities below are labeled with values that LUIS will use as part of the machine learning data set. This is a small set of data. We will have the chance to add more later in the lab, on the LUIS portal.
 
    ```plaintext
-   - Găsește-mi publicații despre {topic=SARS}
-   - Găsește-mi cercetări despre {topic=SARS}
-   - Găsește-mi cercetări despre subiectul {topic=SARS}
-   - Găsește-mi publicații despre subiectul {topic=SARS}
-   - Adu-mi publicații despre {topic=SARS}
-   - Adu-mi cercetări despre {topic=SARS}
-   - Arată-mi cercetări despre {topic=SARS}
-   - Arată-mi publicații despre {topic=SARS}
-   - Găsește-mi publicații despre {topic=ICU}
-   - Găsește-mi cercetări despre {topic=ICU}
-   - Găsește-mi cercetări despre subiectul {topic=ICU}
-   - Găsește-mi publicații despre subiectul {topic=ICU}
-   - Adu-mi publicații despre {topic=ICU}
-   - Adu-mi cercetări despre {topic=ICU}
-   - Arată-mi cercetări despre {topic=ICU}
-   - Arată-mi publicații despre {topic=ICU}
-   - Găsește-mi publicații despre {topic=Pathogenesis}
-   - Găsește-mi cercetări despre {topic=Pathogenesis}
-   - Găsește-mi cercetări despre subiectul {topic=Pathogenesis}
-   - Găsește-mi publicații despre subiectul {topic=Pathogenesis}
-   - Adu-mi publicații despre {topic=Pathogenesis}
-   - Adu-mi cercetări despre {topic=Pathogenesis}
-   - Arată-mi cercetări despre {topic=Pathogenesis}
-   - Arată-mi publicații despre {topic=Pathogenesis}
+   - Find me publications about {topic=SARS}
+   - Find me research about {topic=SARS}
+   - Find me research on {topic=SARS}
+   - Find me publications on {topic=SARS}
+   - Get me publications about {topic=SARS}
+   - Get me research about {topic=SARS}
+   - Get me research on {topic=SARS}
+   - Get me publications on {topic=SARS}
+   - Show me publications about {topic=SARS}
+   - Show me research about {topic=SARS}
+   - Show me research on {topic=SARS}
+   - Show me publications on {topic=SARS}
+   - Find me publications about {topic=ICU}
+   - Find me research about {topic=ICU}
+   - Find me research on {topic=ICU}
+   - Find me publications on {topic=ICU}
+   - Get me publications about {topic=ICU}
+   - Get me research about {topic=ICU}
+   - Get me research on {topic=ICU}
+   - Get me publications on {topic=ICU}
+   - Show me publications about {topic=ICU}
+   - Show me research about {topic=ICU}
+   - Show me research on {topic=ICU}
+   - Show me publications on {topic=ICU}
+   - Find me publications about {topic=Pathogenesis}
+   - Find me research about {topic=Pathogenesis}
+   - Find me research on {topic=Pathogenesis}
+   - Find me publications on {topic=Pathogenesis}
+   - Get me publications about {topic=Pathogenesis}
+   - Get me research about {topic=Pathogenesis}
+   - Get me research on {topic=Pathogenesis}
+   - Get me publications on {topic=Pathogenesis}
+   - Show me publications about {topic=Pathogenesis}
+   - Show me research about {topic=Pathogenesis}
+   - Show me research on {topic=Pathogenesis}
+   - Show me publications on {topic=Pathogenesis}
    ```
 
 7. Select *write an expression* from the **Condition (4)** dropdown and type in `#ResearchLookup.Score>=0.6` into the box. This will be our prediction scoring setting for the **ResearchLookup** intent.
@@ -199,18 +211,18 @@ Our Bot is now using a **Regular expression recognizer** as its Language Underst
    ![OrganizationBasedSearch Trigger is open. Trigger phrases are filled in with LUIS utterances. Condition is set to 0.6 scoring for predictions.](media/organizationbasedresearch-luis-trigger.png)
 
    ```plaintext
-   - Găsește-mi publicații de la {organization=WHO} 
-   - Arată-mi cercetări de la {organization=WHO} 
-   - Ce cercetări a publicat {organization=WHO}?
-   - Găsește-mi publicații de la {organization=U.S. CDC}  
-   - Arată-mi cercetări de la {organization=U.S. CDC} 
-   - Ce cercetări a publicat {organization=U.S. CDC}?
-   - Găsește-mi publicații de la {organization=Institute of Cancer Research} 
-   - Arată-mi cercetări de la {organization=Institute of Cancer Research} 
-   - Ce cercetări a publicat {organization=Institute of Cancer Research}?
+   - Find me publications from {organization=WHO} 
+   - Show research from {organization=WHO} 
+   - What research did {organization=WHO} publish?
+   - Find me publications from {organization=U.S. CDC}  
+   - Show research from {organization=U.S. CDC} 
+   - What research did {organization=U.S. CDC} publish?
+   - Find me publications from {organization=Institute of Cancer Research} 
+   - Show research from {organization=Institute of Cancer Research} 
+   - What research did {organization=Institute of Cancer Research} publish?
    ```
 
-9. Select **AskForMore (1)** trigger. After switching the bot to the **Default Recognizer**, type these two Romanian utterances on separate lines in the **Trigger phrases** box **(2)**: `-Mai multe` and `-Mai multe?`. Feel free to improve the utterances for this Intent by adding more examples.  
+9. Select **AskForMore (1)** trigger. Type in `-More` into the **Trigger phrases** box **(2)**. Feel free to improve the utterances for this Intent by adding more examples.  
 
     ![AskForMore Trigger is open. Trigger phrase is set to More.](media/askformore-luis-trigger.png)  
 
@@ -244,29 +256,29 @@ Our Bot is now using a **Regular expression recognizer** as its Language Underst
 
      ![A list of entities is presented. Entity type "machine learned" is highlighted.](media/luis-portal-entity-list.png)
 
-16. Select the **Review endpoint utterances (1)** page in the portal. This is where we can see a list of utterances users wrote and LUIS predicted, but they are outside the original utterance list we provided. In this case, LUIS did a great job predicting that the `Care sunt cele mai recente cercetări?` message was targeting the **GetRecentResearch** intent. If needed, we can change the predicted intent and select the **Save** button **(4)** to add the new utterance for future training. This will help LUIS learn and improve its predictions.
+16. Select the **Review endpoint utterances (1)** page in the portal. This is where we can see a list of utterances users wrote and LUIS predicted, but they are outside the original utterance list we provided. In this case, LUIS did a great job predicting that the `What is the latest research?` message was targeting the **GetRecentResearch** intent. If needed, we can change the predicted intent and select the **Save** button **(4)** to add the new utterance for future training. This will help LUIS learn and improve its predictions.
 
      ![Review endpoint utterances page is open. The message with the typo is highlighted. Aligned intent is shown as GetRecentResearch. Checkmark button is highlighted.](media/luis-portal-review-utterance.png)
 
-17. Acum revenim în Bot Emulator pentru mai multe teste. Vom testa triggerul **OrganizationBasedSearch**. Ca reamintire, iată lista de enunțuri pe care le-am oferit lui LUIS.
+17. Now, back to our Bot Emulator for more testing. We will test the **OrganizationBasedSearch** Trigger. As a reminder, here is the list of utterances we provided to LUIS.
 
      ```plaintext
-     - Găsește-mi publicații de la {organization=WHO} 
-     - Arată-mi cercetări de la {organization=WHO} 
-     - Ce cercetări a publicat {organization=WHO}?
-     - Găsește-mi publicații de la {organization=U.S. CDC}  
-     - Arată-mi cercetări de la {organization=U.S. CDC} 
-     - Ce cercetări a publicat {organization=U.S. CDC}?
-     - Găsește-mi publicații de la {organization=Institute of Cancer Research} 
-     - Arată-mi cercetări de la {organization=Institute of Cancer Research} 
-     - Ce cercetări a publicat {organization=Institute of Cancer Research}?
+     - Find me publications from {organization=WHO} 
+     - Show research from {organization=WHO} 
+     - What research did {organization=WHO} publish?
+     - Find me publications from {organization=U.S. CDC}  
+     - Show research from {organization=U.S. CDC} 
+     - What research did {organization=U.S. CDC} publish?
+     - Find me publications from {organization=Institute of Cancer Research} 
+     - Show research from {organization=Institute of Cancer Research} 
+     - What research did {organization=Institute of Cancer Research} publish?
      ```
 
-     Să scriem `există cercetări de la Soochow University?` pentru a varia puțin. Niciunul dintre enunțurile de mai sus nu este o potrivire perfectă pentru ceea ce urmează să încercăm.
+     Let's write `any research from Soochow University?` to mix things up. None of the utterances above is a perfect match to what we are going to try.
 
      ![A chatbot dialog where the user asks for research from Soochow University. The response has a list of research. A response message has Soochow highlighted.](media/bot-response-luis-soochow.png)
 
-     Totul a funcționat bine. Botul nostru este într-o formă mult mai bună cu ajutorul capabilităților LUIS de procesare a limbajului natural. Simte-te liber să testezi și celelalte intenții cu expresii precum `Arată-mi ce s-a publicat despre SARS` și continuă să-ți antrenezi modelul pentru a-l îmbunătăți.
+     Everything worked fine. It looks like our Bot is in much better shape with the help of LUIS's natural language processing skills. Feel free to test the other intents with phrases like `Show me what's published on SARS` and keep training your model to improve it.
 
 ## Task 6 - Deploying Our Bot to Azure Bot Service
 
