@@ -310,19 +310,19 @@
     "intents": [
       {
         "intent": "GetRecentResearch",
-        "pattern": "What is the latest research?"
+        "pattern": "Care sunt cele mai recente cercetări?"
       },
       {
         "intent": "ResearchLookup",
-        "pattern": "Find me publications about (?<topic>.*)"
+        "pattern": "Găsește-mi publicații despre (?<topic>.*)"
       },
       {
         "intent": "AskForMore",
-        "pattern": "More?"
+        "pattern": "Mai multe?"
       },
       {
         "intent": "OrganizationBasedSearch",
-        "pattern": "Find me publications from (?<organization>.*)"
+        "pattern": "Găsește-mi publicații de la (?<organization>.*)"
       }
     ]
   }

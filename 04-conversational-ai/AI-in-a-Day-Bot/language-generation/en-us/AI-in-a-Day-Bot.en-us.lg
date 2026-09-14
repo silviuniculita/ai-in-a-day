@@ -1,26 +1,26 @@
 [import](common.lg)
 
 # SendActivity_Welcome()
-- Hi, I can find you the recent research about COVID using a dataset sampled from COVID-19 Open Research Dataset that can be found on https://azure.microsoft.com/en-us/services/open-datasets/catalog/covid-19-open-research/
+- Salut, pot găsi pentru tine cercetări recente despre COVID folosind un set de date extras din COVID-19 Open Research Dataset, disponibil la https://azure.microsoft.com/en-us/services/open-datasets/catalog/covid-19-open-research/
 # SendActivity_003038()
-- Sorry. I did not understand that. Try asking for recent research about COVID.
+- Îmi pare rău. Nu am înțeles. Încearcă să întrebi despre cercetări recente despre COVID.
 
 
 # SendActivity_yXPxMD()
-- Looking for recent publications...
+- Caut publicații recente...
 # SendActivity_S0eIRE()
-- Here is a document titled "${dialog.searchResult.content.value[0].title}". You can access it on ${dialog.searchResult.content.value[0].url}
+- Iată un document intitulat "${dialog.searchResult.content.value[0].title}". Îl poți accesa la ${dialog.searchResult.content.value[0].url}
 # SendActivity_Da2iYr()
-- Here is the latest ${count(dialog.searchResult.content.value)} published research.
+- Iată cele mai recente ${count(dialog.searchResult.content.value)} cercetări publicate.
 # SendActivity_U6iifd()
-- "${dialog.searchResult.content.value[dialog.foreach.index].title}" accessable on ${dialog.searchResult.content.value[dialog.foreach.index].url}
+- "${dialog.searchResult.content.value[dialog.foreach.index].title}" disponibil la ${dialog.searchResult.content.value[dialog.foreach.index].url}
 # SendActivity_hjExtS()
-- Not sure what you are looking for.  Ask me about the latest research.
+- Nu sunt sigur ce cauți. Întreabă-mă despre cele mai recente cercetări.
 # SendActivity_UpOK5X()
-- "${dialog.searchResult.content.value[0].title}" accessable on ${dialog.searchResult.content.value[0].url}
+- "${dialog.searchResult.content.value[0].title}" disponibil la ${dialog.searchResult.content.value[0].url}
 # SendActivity_zEOIoJ()
-- Looking for more ${user.LastTopicSearch} research.
+- Caut mai multe cercetări despre ${user.LastTopicSearch}.
 # SendActivity_DPAmuu()
-- "${dialog.searchResult.content.value[dialog.foreach.index].title}" accessable on ${dialog.searchResult.content.value[dialog.foreach.index].url}
+- "${dialog.searchResult.content.value[dialog.foreach.index].title}" disponibil la ${dialog.searchResult.content.value[dialog.foreach.index].url}
 # SendActivity_MCuhpP()
-- Here is the latest ${count(dialog.searchResult.content.value)} published research by ${@organization}.
+- Iată cele mai recente ${count(dialog.searchResult.content.value)} cercetări publicate de ${@organization}.
