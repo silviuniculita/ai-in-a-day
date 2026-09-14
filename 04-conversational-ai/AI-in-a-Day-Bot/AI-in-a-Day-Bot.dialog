@@ -318,7 +318,7 @@
       },
       {
         "intent": "AskForMore",
-        "pattern": "Mai multe?"
+        "pattern": "^Mai multe\\??$"
       },
       {
         "intent": "OrganizationBasedSearch",

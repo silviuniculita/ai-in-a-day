@@ -127,7 +127,7 @@ First, we will start with a prepopulate Azure Cognitive Search knowledge base en
 
    ![GetRecentResearch trigger is selected. Trigger phrase is highlighted.](media/getrecentresearch-trigger-phrase.png)
 
-9. Switch back to the emulator and write, `Care sunt cele mai recente cercetari?`. You will see that our bot can't understand the message anymore. So far, our bot has used **Regular Expression Recognizer** as its Language Understanding engine. The current setup for the **GetRecentResearch** trigger matches only an exact text to detect user intent. A simple typographical error results in a failure.
+9. Switch back to the emulator and write, `Care sunt cele mai recente cercetari?`. You will see that our bot can't understand the message anymore because the phrase is missing Romanian diacritics. So far, our bot has used **Regular Expression Recognizer** as its Language Understanding engine. The current setup for the **GetRecentResearch** trigger matches only an exact text to detect user intent. A simple typographical difference results in a failure.
 
    ![A dialog shows the user asking latest research with a typo in the text. Bot responds with a sorry message.](media/bot-regex-response-latestresearch-fail.png)
 
@@ -248,7 +248,7 @@ Our Bot is now using a **Regular expression recognizer** as its Language Underst
 
      ![Review endpoint utterances page is open. The message with the typo is highlighted. Aligned intent is shown as GetRecentResearch. Checkmark button is highlighted.](media/luis-portal-review-utterance.png)
 
-17. Now, back to our Bot Emulator for more testing. We will test the **OrganizationBasedSearch** Trigger. As a reminder, here is the list of utterances we provided to LUIS.
+17. Acum revenim în Bot Emulator pentru mai multe teste. Vom testa triggerul **OrganizationBasedSearch**. Ca reamintire, iată lista de enunțuri pe care le-am oferit lui LUIS.
 
      ```plaintext
      - Găsește-mi publicații de la {organization=WHO} 
@@ -262,11 +262,11 @@ Our Bot is now using a **Regular expression recognizer** as its Language Underst
      - Ce cercetări a publicat {organization=Institute of Cancer Research}?
      ```
 
-     Let's write `există cercetări de la Soochow University?` to mix things up. None of the utterances above is a perfect match to what we are going to try.
+     Să scriem `există cercetări de la Soochow University?` pentru a varia puțin. Niciunul dintre enunțurile de mai sus nu este o potrivire perfectă pentru ceea ce urmează să încercăm.
 
      ![A chatbot dialog where the user asks for research from Soochow University. The response has a list of research. A response message has Soochow highlighted.](media/bot-response-luis-soochow.png)
 
-     Everything worked fine. It looks like our Bot is in much better shape with the help of LUIS's natural language processing skills. Feel free to test the other intents with phrases like `Arată-mi ce s-a publicat despre SARS` and keep training your model to improve it.
+     Totul a funcționat bine. Botul nostru este într-o formă mult mai bună cu ajutorul capabilităților LUIS de procesare a limbajului natural. Simte-te liber să testezi și celelalte intenții cu expresii precum `Arată-mi ce s-a publicat despre SARS` și continuă să-ți antrenezi modelul pentru a-l îmbunătăți.
 
 ## Task 6 - Deploying Our Bot to Azure Bot Service
 
