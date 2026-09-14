@@ -310,7 +310,7 @@
     "intents": [
       {
         "intent": "GetRecentResearch",
-        "pattern": "^\\s*[Cc]are sunt cele mai recente cercet(?:ă|a)ri\\?\\s*$"
+        "pattern": "^\\s*[Cc]are sunt cele mai recente cercet(?:ă|a)ri\\??\\s*$"
       },
       {
         "intent": "ResearchLookup",
